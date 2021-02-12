@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import { StyleSheet, View, Text } from "react-native";
+import ImageDefault from "./src/components/ImageDefault";
+import Welcome from "./src/components/Welcome";
+import ButtonDefault from "./src/components/ButtonDefault";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+class App extends Component {
+  render() {
+    let nome = "Mislene";
+    return (
+      <View style={styles.container}>
+        <Welcome />
+
+        <Text style={{ fontSize: 20, fontWeight:"bold" }}>
+          Lorem Ipsum is simply dummy text of the {nome}
+        </Text>
+        <br />
+        <ImageDefault largura={320} altura={240} />
+        <br />
+        <ButtonDefault fonte={30} corDaBorda="#2195" cor="#FFF" corFundo="#2196F3"/>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center"
   },
 });
+
+export default App;
